@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Calculadora_tmb"
+    android:background="@drawable/background_pag01"
+    >
+
+    <TextView
+        android:id="@+id/title_principal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Informe seus dados para calcular sua taxa metabólica basal (TMB)"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        />
+
+    <TextView
+        android:id="@+id/title_peso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/title_peso"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="@id/title_principal"
+        app:layout_constraintEnd_toEndOf="@id/title_principal"
+        app:layout_constraintTop_toBottomOf="@id/title_principal"
+        />
+
+    <EditText
+        android:id="@+id/peso"
+        style="@style/title_styles"
+        android:hint="Ex. 92"
+        android:textSize="22sp"
+        android:maxLength="3"
+        app:layout_constraintEnd_toEndOf="@id/title_peso"
+        app:layout_constraintStart_toStartOf="@id/title_peso"
+        app:layout_constraintTop_toBottomOf="@id/title_peso" />
+
+    <TextView
+        android:id="@+id/title_idade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/title_idade"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="@id/peso"
+        app:layout_constraintEnd_toEndOf="@id/peso"
+        app:layout_constraintTop_toBottomOf="@id/peso"
+        />
+
+    <EditText
+        android:id="@+id/idade"
+        style="@style/title_styles"
+        android:hint="Ex. 24"
+        android:textSize="22sp"
+        android:maxLength="3"
+        app:layout_constraintEnd_toEndOf="@id/title_idade"
+        app:layout_constraintStart_toStartOf="@id/title_idade"
+        app:layout_constraintTop_toBottomOf="@id/title_idade" />
+
+    <TextView
+        android:id="@+id/title_altura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/title_altura"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="@id/idade"
+        app:layout_constraintEnd_toEndOf="@id/idade"
+        app:layout_constraintTop_toBottomOf="@id/idade"
+        />
+
+    <EditText
+        android:id="@+id/altura"
+        style="@style/title_styles"
+        android:hint="Ex. 174"
+        android:textSize="22sp"
+        android:maxLength="3"
+        app:layout_constraintEnd_toEndOf="@id/title_altura"
+        app:layout_constraintStart_toStartOf="@id/title_altura"
+        app:layout_constraintTop_toBottomOf="@id/title_altura" />
+
+    <!-- Botões -->
+
+    <RadioGroup
+        android:id="@+id/genero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/altura">
+
+        <RadioButton
+            android:id="@+id/masculino"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Masculino"
+            android:textSize="22sp"
+            android:textColor="@color/white"
+            android:checked="true"
+            />
+        <RadioButton
+            android:id="@+id/feminino"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Feminino"
+            android:textSize="22sp"
+            android:textColor="@color/white"
+            />
+    </RadioGroup>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/calcular"
+        style="@style/botton"
+        android:text="Calcular"
+        android:onClick="calcularTMB"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/genero"
+        />
+
+
+    <TextView
+        android:id="@+id/resultado"
+        style="@style/title_styles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="1828.15 Calorias/Dia"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="@id/calcular"
+        app:layout_constraintEnd_toEndOf="@id/calcular"
+        app:layout_constraintTop_toBottomOf="@id/calcular"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
